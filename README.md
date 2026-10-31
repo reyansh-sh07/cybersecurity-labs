@@ -22,11 +22,13 @@ The repository separates prerequisite learning from hands-on security work so th
 
 ## Security Labs
 
-No security labs have been added yet. This section will contain practical security exercises once the foundational preparation is complete.
+| # | Lab | Topic | Status |
+|---|---|---|---|
+| 01 | [Unprotected Admin Functionality](./Security-Labs/PortSwigger-Web-Security-Academy/01-unprotected-admin-functionality/) | Broken access control | Solved |
 
 ## Documentation Format
 
-Each entry uses a concise README with its objective, environment, commands or methodology, observations, and key takeaways. Screenshots are stored in the corresponding `evidence/` directory when sharing them is appropriate. Sensitive outputs may be documented without publishing screenshots.
+Each entry records its objective, authorized scope, methodology, observations, findings, and key takeaways. Screenshots are included when sharing them is appropriate; sensitive outputs may be documented without publishing raw captures.
 
 ## Scope and Responsible Practice
 
@@ -34,4 +36,4 @@ All security testing documented here is performed only in authorized labs or con
 
 ## Progress
 
-This repository records work actually completed. Foundational exercises are distinguished from security testing, and guided lab completion is not presented as proof of independent mastery.
+This repository distinguishes foundational exercises from hands-on security testing. Guided lab completion is not presented as proof of independent mastery.
