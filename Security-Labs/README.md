@@ -1,7 +1,24 @@
 # Security Labs
 
-This section is reserved for hands-on cybersecurity exercises, investigations, and authorized security testing.
+Hands-on cybersecurity exercises, investigations, and authorized security testing.
 
-No security labs have been added yet. Foundational exercises are documented separately under [Foundations](../Foundations/).
+Unlike [Foundations](../Foundations/), entries in this section focus on identifying, validating, and understanding security weaknesses in controlled environments.
 
-Each future entry will describe its authorized scope, objective, methodology, evidence, findings, and relevant defensive implications.
+## Labs
+
+| # | Lab | Platform | Topic | Status |
+|---|---|---|---|---|
+| 01 | [Unprotected Admin Functionality](./PortSwigger-Web-Security-Academy/01-unprotected-admin-functionality/) | PortSwigger Web Security Academy | Broken access control | Solved |
+
+## Documentation Standard
+
+Each lab report records:
+
+- Objective and authorized scope
+- Application reconnaissance and methodology
+- Evidence-based findings and impact
+- Root cause and recommended remediation
+- Key technical takeaways
+- Verification of the lab result
+
+Screenshots are included when they add value and can be shared safely. Sensitive details may be omitted while preserving a clear technical explanation.
