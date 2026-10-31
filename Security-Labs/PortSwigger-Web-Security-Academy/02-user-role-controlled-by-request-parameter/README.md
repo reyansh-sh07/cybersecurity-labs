@@ -68,6 +68,8 @@ The application confirmed the deletion, and PortSwigger displayed the lab comple
 
 **Lab solved.**
 
+![PortSwigger lab completion confirmation](./evidence/05-lab-solved.png)
+
 ## What actually went wrong?
 
 The application was using a client-side cookie named `Admin` to decide whether the user had administrator privileges.
@@ -110,13 +112,9 @@ The biggest thing I learned here is that **a value coming from the browser canno
 
 ## Lab Evidence
 
-The evidence folder is intended to contain the following screenshots. Cookie and session values must be redacted before publishing.
+- `05-lab-solved.png` — successful lab completion and confirmation that the requested user was deleted.
 
-- `01-lab-description.png` — lab objective, admin panel path, and provided test credentials.
-- `02-users-before-deletion.png` — the user list before deleting `carlos`.
-- `03-admin-cookie-storage.png` — the `Admin` cookie in the browser Storage tab. Session-cookie values are redacted.
-- `04-admin-access-check.png` — the admin access check before the cookie change.
-- `05-lab-solved.png` — successful lab completion and deletion confirmation.
+I have not included the original cookie Storage screenshot because it exposed a session-cookie value and a unique lab-instance identifier. I will add a redacted version only after those values are fully hidden. The remaining steps are documented above without exposing session data.
 
 ## Scope
 
