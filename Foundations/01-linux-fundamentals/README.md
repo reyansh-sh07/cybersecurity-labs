@@ -1,4 +1,7 @@
-# Lab 00 — Linux Fundamentals
+# Linux Fundamentals
+
+**Section:** Foundations  
+**Focus:** User identity, filesystem navigation, and system identification
 
 ## Objective
 
@@ -34,16 +37,14 @@ Practise essential Linux commands for identifying the current user, exploring th
 
 ## Practical Evidence
 
-The screenshot below records the commands executed and their terminal output. The hostname is redacted in the evidence image.
+The screenshot below records the commands and their terminal output. The hostname is redacted in the evidence image.
 
-![Lab 00 — Linux Fundamentals terminal evidence](./evidence/lab_00-linux-fundamentals.png)
-
-[View the original evidence file](./evidence/lab_00-linux-fundamentals.png)
+![Linux fundamentals terminal evidence](./evidence/linux-fundamentals.png)
 
 ## Key Takeaways
 
-These commands provide a basic first look at a Linux environment: who is executing commands, which groups the account belongs to, where the shell is located, and which operating system and kernel are in use. This information is useful during system administration, host enumeration, and security investigations.
+These commands provide a basic first look at a Linux environment: who is executing commands, which groups the account belongs to, where the shell is located, and which operating system and kernel are in use. This information is useful during system administration and initial host enumeration.
 
 ## Scope
 
-This was a fundamentals exercise in my own Ubuntu/WSL2 environment. The commands are informational and do not, by themselves, demonstrate a security vulnerability or an independent penetration test.
+This was a foundational exercise in my own Ubuntu/WSL2 environment. The commands are informational and do not, by themselves, demonstrate a security vulnerability or an independent penetration test.

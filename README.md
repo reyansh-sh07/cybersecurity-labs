@@ -1,32 +1,35 @@
 # Cybersecurity Labs
 
-A practical learning repository documenting my cybersecurity journey through guided coursework, hands-on labs, and independent practice.
+A practical learning repository documenting my cybersecurity journey through foundational exercises, guided security labs, and independent practice.
 
-This repository focuses on understanding the concepts behind the tools and techniques I use, documenting practical work, and maintaining evidence of my learning.
+The repository separates prerequisite learning from hands-on security work so that each entry reflects its actual scope.
 
-## Learning Sources
+## Repository Structure
 
-| Source | What I document |
+| Section | Purpose |
 |---|---|
-| TuteDude | Course exercises, practical labs, and key concepts |
-| TryHackMe | Authorized rooms, exercises, and learning notes |
-| Independent Practice | Self-directed experiments in controlled environments |
+| [Foundations](./Foundations/) | Build Linux, networking, operating-system, and other prerequisite knowledge. |
+| [Security Labs](./Security-Labs/) | Document practical security exercises, investigations, and authorized testing. |
 
-## Labs
+## Foundations
 
-| # | Lab | Topics | Status |
+| # | Exercise | Topics | Status |
 |---|---|---|---|
-| 00 | [Linux Fundamentals](./Lab_00-Linux-Fundamentals/) | User identity, filesystem navigation, user groups, and system information | Completed |
-| 01 | [Linux System Resource Monitoring](./Lab_01-Linux-System-Resource-Monitoring/) | CPU availability, memory, storage, uptime, and process inspection | Completed |
+| 01 | [Linux Fundamentals](./Foundations/01-linux-fundamentals/) | User identity, filesystem navigation, groups, and system information | Documented |
+| 02 | [Linux System Resource Monitoring](./Foundations/02-linux-system-monitoring/) | CPU availability, memory, storage, uptime, and process inspection | Documentation created; evidence pending |
+
+## Security Labs
+
+No security labs have been added yet. This section will contain practical security exercises once the foundational preparation is complete.
 
 ## Documentation Format
 
-Each lab includes a concise explanation of the objective, commands and their purpose, practical observations, embedded evidence screenshots, and key takeaways. Original evidence files are also retained in each lab's `evidence/` directory.
+Each entry uses a concise README with its objective, environment, commands or methodology, observations, key takeaways, and embedded screenshots. Original evidence files are kept in the corresponding `evidence/` directory.
 
 ## Scope and Responsible Practice
 
-All practical security testing documented here is performed in authorized labs or controlled environments. Sensitive information, credentials, private data, and restricted challenge solutions are not intentionally published.
+All security testing documented here is performed only in authorized labs or controlled environments. Credentials, private data, and restricted challenge solutions are not intentionally published.
 
 ## Progress
 
-This repository is a work in progress. Entries reflect exercises actually completed and documented; completing a guided lab is not presented as proof of independent mastery.
+This repository records work actually completed. Foundational exercises are distinguished from security testing, and guided lab completion is not presented as proof of independent mastery.
