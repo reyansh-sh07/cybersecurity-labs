@@ -39,7 +39,9 @@ These commands provide a basic first look at a Linux environment: who is executi
 
 ## Evidence
 
-See [the terminal evidence](./evidence/01-linux-fundamentals.png) for the commands and their outputs. The hostname has been redacted from the public screenshot.
+![Linux fundamentals terminal evidence](./01-linux-fundamentals.png)
+
+The hostname has been redacted from the public screenshot.
 
 ## Scope
 
