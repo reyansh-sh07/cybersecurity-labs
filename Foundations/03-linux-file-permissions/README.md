@@ -22,8 +22,8 @@ Practise creating a file, inspecting its permissions and metadata, changing its 
 | `ls -l` | Displays a detailed listing, including permission bits, owner, group, size, and modification time. | Provides a quick view of file permissions and ownership. |
 | `stat permission-test.txt` | Displays detailed file metadata, including numeric and symbolic access permissions, ownership, inode, and timestamps. | Gives a more complete view of file metadata than a basic directory listing. |
 | `chmod 600 permission-test.txt` | Sets read/write permissions for the owner and removes permissions for group and others. | Restricts access to the file owner. |
-| `chmod 644 ~/permission-test.txt` | Sets read/write permissions for the owner and read-only permissions for group and others. | Demonstrates a common permission mode for non-sensitive files intended to be readable by other users. |
-| `rm ~/permission-test.txt` | Removes the file. | Cleans up the temporary test file after the exercise. |
+| `chmod 644 permission-test.txt` | Sets read/write permissions for the owner and read-only permissions for group and others. | Demonstrates a common permission mode for non-sensitive files intended to be readable by other users. |
+| `rm permission-test.txt` | Removes the file. | Cleans up the temporary test file after the exercise. |
 
 ## Understanding the Permission Changes
 
@@ -38,7 +38,7 @@ The screenshot shows the file initially created with mode **0644**, changed to *
 
 The screenshot below captures the file creation, permission inspection, permission changes, and cleanup.
 
-![Linux file permissions terminal evidence](./evidence/linux-file-permissions.jpg)
+![Linux file permissions terminal evidence](./evidence/linux-file-permissions.png)
 
 ## Key Takeaways
 
