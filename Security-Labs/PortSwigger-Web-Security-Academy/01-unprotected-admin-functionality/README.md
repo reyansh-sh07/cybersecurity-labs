@@ -24,6 +24,8 @@ I also opened a few product pages and changed the product_id to a value that I t
 
 I wanted to understand how the website handled product IDs and whether changing them would reveal anything interesting. It did not lead me to the admin panel, but it was part of my initial exploration.
 
+![Website exploration during initial reconnaissance](./evidence/01-website-reconnaissance.png)
+
 ### 2. I checked the account page
 
 Next, I inspected the account page and tried a few username and password combinations.
@@ -56,6 +58,8 @@ In simple words, the website was telling search engine crawlers to stay away fro
 
 One important thing I learned here: **robots.txt does not actually protect a page.** It only gives instructions to crawlers. Anyone can still try to open the path directly.
 
+![robots.txt revealing the administrator panel path](./evidence/02-robots-txt.png)
+
 ### 4. I tried opening the admin panel directly
 
 After finding the path, I entered:
@@ -72,6 +76,8 @@ This is an example of **Broken Access Control**.
 
 In simple words, access control is what decides who is allowed to view or perform certain actions. Here, the website failed to restrict an admin-only page to admin users.
 
+![Admin panel accessible directly without administrator authentication](./evidence/03-admin-panel-access.png)
+
 ### 5. I deleted the requested user
 
 Once I was inside the admin panel, I could see the list of users.
@@ -81,6 +87,8 @@ I found the user carlos and clicked the Delete option next to it.
 The website confirmed that the user had been deleted, and PortSwigger showed the lab completion message.
 
 **Lab solved.**
+
+![PortSwigger confirmation that the lab was solved](./evidence/04-lab-solved.png)
 
 ## What actually went wrong?
 
@@ -119,11 +127,7 @@ The bigger lesson for me was understanding the difference between **finding a hi
 
 ## Lab Evidence
 
-The following screenshots can be added as I organize the evidence:
-
-- 01-robots-txt.png — the clue that revealed the admin path.
-- 02-admin-panel.png — the admin panel opened directly.
-- 03-lab-solved.png — the successful lab completion message.
+All screenshots are stored in the `evidence/` folder and embedded above at the relevant steps.
 
 ## Scope
 
