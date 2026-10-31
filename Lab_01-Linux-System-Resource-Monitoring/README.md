@@ -17,7 +17,7 @@ Practise commands for checking available CPU resources, memory and swap usage, f
 | `free -h` | Displays memory and swap usage in human-readable units. | Helps assess memory pressure and available memory. |
 | `df -h /` | Reports disk-space usage for the filesystem mounted at `/`. | Helps identify storage capacity and filesystem usage. |
 | `uptime` | Shows how long the system has been running, the number of logged-in users, and load averages. | Provides a quick view of system availability and recent load. |
-| `ps -eo user,pid,ppid,%cpu,%mem,comm --sort=-%cpu \| head -n 10` | Lists selected process details, sorts by CPU usage in descending order, and displays the first 10 lines. | Helps inspect running processes, their owners, parent processes, and resource usage. |
+| `ps -eo user,pid,ppid,%cpu,%mem,comm --sort=-%cpu | head -n 10` | Lists selected process details, sorts by CPU usage in descending order, and displays the first 10 lines. | Helps inspect running processes, their owners, parent processes, and resource usage. |
 
 ## Key Observations
 
