@@ -9,8 +9,7 @@ Practise commands for checking available CPU resources, memory and swap usage, f
 
 ## Environment
 
-- **Operating system:** Ubuntu 26.04.1 LTS
-- **Environment:** Windows Subsystem for Linux 2 (WSL2)
+- **Operating system:** Ubuntu running under WSL2
 - **Shell:** Bash
 
 ## Commands Practised
@@ -35,9 +34,9 @@ These are point-in-time observations; resource usage and process IDs can change 
 
 ## Practical Evidence
 
-The screenshot below records the commands and their terminal output.
+The terminal screenshot for this exercise will be embedded here once uploaded.
 
-![Linux system resource monitoring evidence](./evidence/linux-system-resource-monitoring.png)
+<!-- Add the screenshot using: ![Linux resource monitoring evidence](./evidence/linux-resource-monitoring.png) -->
 
 ## Key Takeaways
 
