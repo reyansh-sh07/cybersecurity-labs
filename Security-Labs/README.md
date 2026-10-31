@@ -9,6 +9,7 @@ Unlike [Foundations](../Foundations/), entries in this section focus on identify
 | # | Lab | Platform | Topic | Status |
 |---|---|---|---|---|
 | 01 | [Unprotected Admin Functionality](./PortSwigger-Web-Security-Academy/01-unprotected-admin-functionality/) | PortSwigger Web Security Academy | Broken access control | Solved |
+| 02 | [User Role Controlled by Request Parameter](./PortSwigger-Web-Security-Academy/02-user-role-controlled-by-request-parameter/) | PortSwigger Web Security Academy | Cookie tampering / vertical privilege escalation | Solved |
 
 ## Documentation Standard
 
