@@ -17,6 +17,7 @@ This repository focuses on understanding the concepts behind the tools and techn
 | # | Lab | Topics | Status |
 |---|---|---|---|
 | 00 | [Linux Fundamentals](./Lab_00-Linux-Fundamentals/) | User identity, filesystem navigation, user groups, and system information | Completed |
+| 01 | [Linux System Resource Monitoring](./Lab_01-Linux-System-Resource-Monitoring/) | CPU availability, memory, storage, uptime, and process inspection | Completed |
 
 ## Documentation Format
 
