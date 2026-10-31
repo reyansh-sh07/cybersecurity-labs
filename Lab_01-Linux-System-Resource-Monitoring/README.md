@@ -23,7 +23,7 @@ Practise commands for checking available CPU resources, memory and swap usage, f
 
 - `nproc` reported **2** processing units available to the environment.
 - `free -h` reported **2.8 GiB** total memory, approximately **2.4 GiB** available, and **2.0 GiB** swap with none in use at the time of capture.
-- `df -h /` showed the root filesystem at approximately **1%** usage.
+- `df -h /` showed the root filesystem with approximately **955 GiB** available and **1%** usage.
 - `uptime` reported about **4 hours 56 minutes** of uptime and low load averages (**0.02, 0.02, 0.00**).
 - The process listing displayed process owners, PIDs, parent PIDs, CPU and memory percentages, and command names.
 
