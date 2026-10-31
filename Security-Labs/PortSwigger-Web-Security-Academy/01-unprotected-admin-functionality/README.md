@@ -1,98 +1,130 @@
 # Unprotected Admin Functionality
 
 **Platform:** PortSwigger Web Security Academy  
-**Category:** Access control  
-**Status:** Solved  
-**Environment:** Intentionally vulnerable, isolated Web Security Academy lab
+**Topic:** Access Control  
+**Status:** Solved
 
-## Objective
+## What was I trying to do?
 
-Identify an exposed administrative interface and use the lab's access-control weakness to delete the user `carlos`, as required by the challenge.
+The goal of this lab was to find the admin panel and delete the user carlos.
 
-## Vulnerability Overview
+At first, I had no idea where the admin panel was. There was no visible link or button that took me to it, so I started exploring the website and looking for clues.
 
-The application exposed administrative functionality at a predictable URL without enforcing authentication or authorization. The path was disclosed in the publicly accessible `robots.txt` file.
+## How I approached the lab
 
-This is a **broken access control** issue: a user who should not have administrative privileges can directly access privileged functionality.
+### 1. First, I explored the website
 
-> Important distinction: `robots.txt` is a crawler directive, not an access-control mechanism. Its `Disallow` entry does not protect a URL. The vulnerability exists because the application fails to enforce access controls on the administrative endpoint.
+I visited the different pages and paid attention to how the URLs changed.
 
-## Methodology
+I noticed that the URL was not the same on every page. This made me think that the application might be using different paths or parameters to load different content.
 
-### 1. Application reconnaissance
+I also opened a few product pages and changed the product_id to a value that I thought would not exist.
 
-- Browsed the storefront and observed how application URLs changed between pages.
-- Inspected product links and experimented with an invalid `product_id` value to understand how the application handled identifiers.
-- Reviewed the account page as part of the initial application mapping.
+**Why did I try this?**
 
-These were exploratory checks; they did not establish a separate product-level or account-level vulnerability.
+I wanted to understand how the website handled product IDs and whether changing them would reveal anything interesting. It did not lead me to the admin panel, but it was part of my initial exploration.
 
-### 2. Discovering the administrative path
+### 2. I checked the account page
 
-Requested the site's `/robots.txt` file and found the following directive:
+Next, I inspected the account page and tried a few username and password combinations.
 
-```text
-User-agent: *
-Disallow: /administrator-panel
-```
+I was checking whether there was any obvious way to discover or access the admin functionality through the account section.
 
-This revealed the path `/administrator-panel` as a location that crawlers were asked not to visit.
+This did not work either, so I moved on instead of spending too much time guessing credentials.
 
-### 3. Testing access control
+### 3. I looked for clues in robots.txt
 
-Navigated directly to `/administrator-panel` without authenticating as an administrator. The application displayed the administrative user-management page.
+Since I still had no idea where the admin panel was, I thought there might be a file that could reveal hidden or less obvious website paths.
 
-This confirmed that the administrative functionality was accessible without the required access control.
+That's when I decided to check:
 
-### 4. Verifying impact
+    /robots.txt
 
-Used the exposed user-management functionality to delete the lab's designated user, `carlos`.
+I found this content:
 
-PortSwigger displayed the lab's success confirmation, verifying that the challenge objective had been completed.
+    User-agent: *
+    Disallow: /administrator-panel
 
-## Finding
+This was the clue I was looking for!
 
-| Attribute | Result |
-|---|---|
-| Weakness | Missing access control on administrative functionality |
-| Discovery | Administrative path disclosed by `robots.txt` |
-| Affected functionality | `/administrator-panel` |
-| Access required | No administrator authentication in the lab |
-| Demonstrated impact | Unauthenticated access to user-management functionality and deletion of `carlos` |
-| Lab result | Solved |
+**What does this mean?**
 
-## Security Impact
+- User-agent: * means the rule applies to all web crawlers.
+- Disallow: /administrator-panel asks crawlers not to visit that path.
 
-If a comparable weakness existed in a real application, an unauthenticated user could potentially reach privileged administrative operations. Depending on the functionality exposed, this could lead to unauthorized account changes, deletion of user data, or broader administrative compromise.
+In simple words, the website was telling search engine crawlers to stay away from that path, but it was also revealing the admin panel's URL.
 
-The exact impact depends on the actions available through the exposed interface.
+One important thing I learned here: **robots.txt does not actually protect a page.** It only gives instructions to crawlers. Anyone can still try to open the path directly.
 
-## Root Cause
+### 4. I tried opening the admin panel directly
 
-The application relied on the administrative URL being difficult to discover instead of enforcing access control on the server.
+After finding the path, I entered:
 
-A hidden or unlinked URL is not a security boundary. Every privileged endpoint must independently verify that the requester is authenticated and authorized.
+    /administrator-panel
 
-## Recommended Remediation
+I expected that the website might ask me to log in or deny access. But it opened the admin panel directly!
 
-1. **Enforce authentication:** Require a valid authenticated session before serving administrative functionality.
-2. **Enforce authorization server-side:** Verify the user's administrative role or permission on every privileged request, including direct URL access.
-3. **Use deny-by-default access control:** Grant access only to explicitly authorized roles.
-4. **Do not rely on obscurity:** Treat `robots.txt`, hidden links, and unpredictable URLs as non-security controls.
-5. **Add security tests and logging:** Test direct access to administrative routes with unauthenticated and low-privilege accounts, and log denied or suspicious administrative requests.
+This was the actual security issue.
 
-## Key Takeaways
+The application had an admin panel, but it was not checking whether the person accessing it was really an administrator.
 
-- `robots.txt` can reveal paths that a site owner does not want crawlers to visit.
-- A `Disallow` directive does not prevent a person from requesting that path.
-- Administrative routes must enforce authorization on the server, not merely hide navigation links.
-- Directly requesting a privileged URL is an important access-control test.
-- A successful exploit should be verified through an observable result, not just inferred from a page loading.
+This is an example of **Broken Access Control**.
 
-## Evidence
+In simple words, access control is what decides who is allowed to view or perform certain actions. Here, the website failed to restrict an admin-only page to admin users.
 
-The lab was completed in PortSwigger Web Security Academy. Screenshots are not included in this repository commit; the write-up records the discovery, access-control test, impact verification, and successful lab result without publishing the supplied captures.
+### 5. I deleted the requested user
 
-## Scope and Ethics
+Once I was inside the admin panel, I could see the list of users.
 
-Testing was performed only against the intentionally vulnerable PortSwigger Web Security Academy lab environment. The demonstrated user deletion was part of the challenge objective and was not performed against a real service.
+I found the user carlos and clicked the Delete option next to it.
+
+The website confirmed that the user had been deleted, and PortSwigger showed the lab completion message.
+
+**Lab solved.**
+
+## What actually went wrong?
+
+The main problem was not that the admin URL was visible in robots.txt.
+
+The real problem was that the server allowed someone to access the admin panel without checking their permissions.
+
+The website was relying on the admin URL being unknown instead of properly protecting the functionality.
+
+This is sometimes confused with **security through obscurity**. It means assuming something is safe just because people do not know where to find it. But hiding a URL is not the same as securing it.
+
+## What I learned from this lab
+
+1. Exploring a website and observing URL patterns can help me understand how its pages work.
+2. robots.txt can reveal paths that are not linked anywhere on the website.
+3. A Disallow rule does not block users from opening that URL.
+4. I should try accessing interesting endpoints directly and check whether the application properly restricts them.
+5. Admin functionality must be protected on the server. Hiding the admin link or URL is not enough.
+
+## How could this be prevented?
+
+If I were securing an application like this, I would:
+
+- Require users to log in before accessing the admin panel.
+- Check the user's role and permissions on the server for every admin-only action.
+- Make sure normal users cannot perform administrative actions just by entering a URL directly.
+- Test admin routes using both logged-out and normal user accounts.
+
+## My takeaway
+
+This lab taught me that sometimes the useful clue is not hidden in complicated code or a complex payload. It can be sitting in a simple file like robots.txt.
+
+I started by exploring pages, checking URL changes, and trying a few things that did not work. Eventually, one small clue helped me find the admin panel.
+
+The bigger lesson for me was understanding the difference between **finding a hidden URL** and **finding an actual security vulnerability**. The URL helped me discover the panel, but the missing access-control check was what made the lab vulnerable.
+
+## Lab Evidence
+
+The following screenshots can be added as I organize the evidence:
+
+- 01-robots-txt.png — the clue that revealed the admin path.
+- 02-admin-panel.png — the admin panel opened directly.
+- 03-lab-solved.png — the successful lab completion message.
+
+## Scope
+
+This exercise was performed in the intentionally vulnerable PortSwigger Web Security Academy lab. The user deletion was part of the lab objective and was not performed on a real website.
