@@ -14,8 +14,6 @@ The lab description explicitly identified a **horizontal privilege escalation** 
 - **Username:** `wiener`
 - **Password:** `peter`
 
-![PortSwigger lab description and objective](./evidence/01-lab-description.jpg)
-
 ## How I approached the lab
 
 ### 1. I identified the type of vulnerability
@@ -67,7 +65,7 @@ I used the API key displayed on Carlos's account page as the lab solution. PortS
 
 **Lab solved.**
 
-![Successful lab completion and Carlos account page; API key redacted](./evidence/02-carlos-account-access-redacted.jpg)
+![Lab solved — Carlos's account accessed and API key redacted](./evidence/02-carlos-account-access-redacted.jpg)
 
 ## What actually went wrong?
 
@@ -107,7 +105,7 @@ The main lesson is that **the server must check whether the authenticated user i
 
 ## Lab Evidence
 
-The screenshots in the `evidence/` directory document the lab objective and successful completion. The API key shown on the account page has been redacted before publication.
+The final screenshot in the `evidence/` directory shows the successful lab completion. The API key has been redacted before publication.
 
 ## Scope
 
