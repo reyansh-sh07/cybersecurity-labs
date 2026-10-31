@@ -15,8 +15,8 @@ The repository separates prerequisite learning from hands-on security work so th
 
 | # | Exercise | Topics | Status |
 |---|---|---|---|
-| 01 | [Linux Fundamentals](./Foundations/01-linux-fundamentals/) | User identity, filesystem navigation, groups, and system information | Documented |
-| 02 | [Linux System Resource Monitoring](./Foundations/02-linux-system-monitoring/) | CPU availability, memory, storage, uptime, and process inspection | Documentation created; evidence pending |
+| 01 | [Linux Fundamentals](./Foundations/01-linux-fundamentals/) | User identity, filesystem navigation, groups, and system information | Documented with evidence |
+| 02 | [Linux System Resource Monitoring](./Foundations/02-linux-system-monitoring/) | CPU availability, memory, storage, uptime, and process inspection | Documented with evidence |
 
 ## Security Labs
 
