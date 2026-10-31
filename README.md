@@ -18,6 +18,7 @@ The repository separates prerequisite learning from hands-on security work so th
 | 01 | [Linux Fundamentals](./Foundations/01-linux-fundamentals/) | User identity, filesystem navigation, groups, and system information | Documented with evidence |
 | 02 | [Linux System Resource Monitoring](./Foundations/02-linux-system-monitoring/) | CPU availability, memory, storage, uptime, and process inspection | Documented with evidence |
 | 03 | [Linux File Permissions](./Foundations/03-linux-file-permissions/) | File metadata, permission modes, `chmod`, and file removal | Documented with evidence |
+| 04 | [Linux Network Interface and Socket Inspection](./Foundations/04-linux-network-inspection/) | Interfaces, IP addressing, routing, TCP/UDP sockets, and listening services | Documented; no screenshot published for privacy |
 
 ## Security Labs
 
@@ -25,7 +26,7 @@ No security labs have been added yet. This section will contain practical securi
 
 ## Documentation Format
 
-Each entry uses a concise README with its objective, environment, commands or methodology, observations, key takeaways, and embedded screenshots. Original evidence files are kept in the corresponding `evidence/` directory.
+Each entry uses a concise README with its objective, environment, commands or methodology, observations, and key takeaways. Screenshots are stored in the corresponding `evidence/` directory when sharing them is appropriate. Sensitive outputs may be documented without publishing screenshots.
 
 ## Scope and Responsible Practice
 
