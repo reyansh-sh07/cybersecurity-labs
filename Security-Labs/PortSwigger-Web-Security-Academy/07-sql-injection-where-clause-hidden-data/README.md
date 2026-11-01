@@ -83,15 +83,11 @@ The demonstrated impact in this lab was retrieval of hidden product data.
 
 ## Evidence
 
-The lab-completion screenshot belongs in the `evidence/` directory.
+The lab-completion screenshot is stored in the `evidence/` directory.
 
-Save the redacted screenshot as:
+![SQL injection WHERE clause lab completion](./evidence/01-lab-solved.png)
 
-`01-lab-solved-redacted.png`
-
-![SQL injection WHERE clause lab completion](./evidence/01-lab-solved-redacted.png)
-
-Before publishing, redact the unique lab-instance URL from the browser address bar. Do not publish credentials, session cookies, or other sensitive values.
+**Privacy note:** The screenshot's browser address bar contains the unique lab-instance URL. Redact it before keeping this evidence publicly accessible. Do not publish credentials, session cookies, or other sensitive values.
 
 ## Scope
 
