@@ -116,6 +116,14 @@ The turning point was switching to Burp Suite and inspecting the requests genera
 
 The main lesson is that **the server must decide which account properties a user is allowed to modify**. It must never assume that a field is safe just because it arrives in a normal profile-update request.
 
+## Evidence
+
+### Administrator panel and lab completion
+
+![Administrator panel showing the solved lab](./evidence/02-admin-panel-solved-redacted.png)
+
+The screenshot has been cropped to the relevant lab result and the lab-specific address has been excluded.
+
 ## Scope
 
 This exercise was performed only in the intentionally vulnerable PortSwigger Web Security Academy lab environment. The role modification and user deletion were limited to the lab instance.
