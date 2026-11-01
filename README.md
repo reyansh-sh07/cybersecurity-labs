@@ -30,6 +30,7 @@ The repository separates prerequisite learning from hands-on security work so th
 | 04 | [User Role Can Be Modified in User Profile](./Security-Labs/PortSwigger-Web-Security-Academy/04-user-role-can-be-modified-in-user-profile/) | Mass assignment / vertical privilege escalation | Solved |
 | 05 | [Password Reset Broken Logic](./Security-Labs/PortSwigger-Web-Security-Academy/05-password-reset-broken-logic/) | Password-reset logic flaw / account takeover | Solved |
 | 06 | [2FA Simple Bypass](./Security-Labs/PortSwigger-Web-Security-Academy/06-2fa-simple-bypass/) | Multi-factor authentication bypass | Solved |
+| 07 | [SQL Injection — WHERE Clause Allowing Retrieval of Hidden Data](./Security-Labs/PortSwigger-Web-Security-Academy/07-sql-injection-where-clause-hidden-data/) | SQL injection / hidden data retrieval | Solved |
 
 ## Documentation Format
 
