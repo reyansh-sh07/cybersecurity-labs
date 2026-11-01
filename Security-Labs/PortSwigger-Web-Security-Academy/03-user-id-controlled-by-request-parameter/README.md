@@ -65,7 +65,7 @@ I used the API key displayed on Carlos's account page as the lab solution. PortS
 
 **Lab solved.**
 
-![Lab solved — Carlos's account accessed and API key redacted](./evidence/02-carlos-account-access-redacted.jpg)
+![Lab solved — Carlos's account accessed; API key redacted](./evidence/01-admin-panel-solved-redacted.png)
 
 ## What actually went wrong?
 
