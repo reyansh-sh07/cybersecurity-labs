@@ -60,13 +60,11 @@ The server must maintain a distinct, incomplete-authentication state after passw
 
 The lab-completion screenshot belongs in the `evidence/` directory.
 
-Save the redacted screenshot as:
+The uploaded completion screenshot is stored as `01-lab-solved.png`.
 
-`01-lab-solved-redacted.png`
+![PortSwigger 2FA simple bypass lab completion](./evidence/01-lab-solved.png)
 
-![PortSwigger 2FA simple bypass lab completion](./evidence/01-lab-solved-redacted.png)
-
-Before uploading, redact the unique lab-instance URL from the browser address bar. Do not publish session cookies, authentication tokens, or other secrets.
+For a public portfolio, consider replacing the screenshot with a copy that has the unique lab-instance URL redacted. Never publish session cookies, authentication tokens, or other secrets.
 
 ## Scope
 
