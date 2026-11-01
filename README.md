@@ -29,6 +29,7 @@ The repository separates prerequisite learning from hands-on security work so th
 | 03 | [User ID Controlled by Request Parameter](./Security-Labs/PortSwigger-Web-Security-Academy/03-user-id-controlled-by-request-parameter/) | IDOR / horizontal privilege escalation | Solved |
 | 04 | [User Role Can Be Modified in User Profile](./Security-Labs/PortSwigger-Web-Security-Academy/04-user-role-can-be-modified-in-user-profile/) | Mass assignment / vertical privilege escalation | Solved |
 | 05 | [Password Reset Broken Logic](./Security-Labs/PortSwigger-Web-Security-Academy/05-password-reset-broken-logic/) | Password-reset logic flaw / account takeover | Solved |
+| 06 | [2FA Simple Bypass](./Security-Labs/PortSwigger-Web-Security-Academy/06-2fa-simple-bypass/) | Multi-factor authentication bypass | Solved |
 
 ## Documentation Format
 
