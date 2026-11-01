@@ -120,9 +120,9 @@ The main lesson is that **the server must decide which account properties a user
 
 ### Administrator panel and lab completion
 
-![Administrator panel showing the solved lab](./evidence/02-admin-panel-solved-redacted.png)
+![PortSwigger lab completion confirmation](./evidence/Screenshot%20%281656%29.png)
 
-The screenshot has been cropped to the relevant lab result and the lab-specific address has been excluded.
+The screenshot shows the successful lab completion and administrator panel.
 
 ## Scope
 
