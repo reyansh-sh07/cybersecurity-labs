@@ -25,6 +25,10 @@ The repository separates prerequisite learning from hands-on security work so th
 | # | Lab | Topic | Status |
 |---|---|---|---|
 | 01 | [Unprotected Admin Functionality](./Security-Labs/PortSwigger-Web-Security-Academy/01-unprotected-admin-functionality/) | Broken access control | Solved |
+| 02 | [User Role Controlled by Request Parameter](./Security-Labs/PortSwigger-Web-Security-Academy/02-user-role-controlled-by-request-parameter/) | Broken access control / privilege escalation | Solved |
+| 03 | [User ID Controlled by Request Parameter](./Security-Labs/PortSwigger-Web-Security-Academy/03-user-id-controlled-by-request-parameter/) | IDOR / horizontal privilege escalation | Solved |
+| 04 | [User Role Can Be Modified in User Profile](./Security-Labs/PortSwigger-Web-Security-Academy/04-user-role-can-be-modified-in-user-profile/) | Mass assignment / vertical privilege escalation | Solved |
+| 05 | [Password Reset Broken Logic](./Security-Labs/PortSwigger-Web-Security-Academy/05-password-reset-broken-logic/) | Password-reset logic flaw / account takeover | Solved |
 
 ## Documentation Format
 
