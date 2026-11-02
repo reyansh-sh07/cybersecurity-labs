@@ -158,12 +158,21 @@ Do not block an address or declare an account compromised solely from this small
 
 ## Evidence
 
-The two terminal screenshots selected for this project should be stored in `evidence/`:
+The following terminal captures document the dataset and the investigation workflow.
 
-- `01-synthetic-authentication-log.png` — creation and inspection of the synthetic SSH log.
-- `02-cli-investigation-and-username-counts.png` — log line count, failed-attempt counts, successful logins, and the `deploy` pivot.
+### 1. Synthetic SSH authentication log
 
-Screenshots of conversational feedback and planning are not included as technical evidence. Their useful lessons are incorporated into this report.
+This capture shows the creation and inspection of the self-generated `auth.log` dataset.
+
+![Synthetic SSH authentication log created and inspected in Ubuntu](./evidence/01-synthetic-authentication-log.png)
+
+### 2. Command-line investigation
+
+This capture shows the 18-line count, failed-attempt counts by username, successful password authentications, and the focused review of the `deploy` account.
+
+![Ubuntu command-line analysis of SSH authentication events](./evidence/02-cli-investigation-and-username-counts.png)
+
+The separate [investigation findings](./findings.md) summarise the observed facts, hypotheses, priorities, and recommended follow-up evidence. Screenshots of conversational feedback and planning are intentionally excluded from technical evidence.
 
 ## Scope and Ethics
 
