@@ -1,45 +1,41 @@
-# Cybersecurity Labs
+# Cybersecurity Portfolio
 
-A practical learning repository documenting my cybersecurity journey through foundational exercises, guided security labs, and independent practice.
+A practical record of my cybersecurity learning, hands-on exercises, and independent investigations. This repository is organised by the type of security work being practised.
 
-The repository separates prerequisite learning from hands-on security work so that each entry reflects its actual scope.
+## Portfolio Areas
 
-## Repository Structure
-
-| Section | Purpose |
+| Area | Focus |
 |---|---|
-| [Foundations](./Foundations/) | Build Linux, networking, operating-system, and other prerequisite knowledge. |
-| [Security Labs](./Security-Labs/) | Document practical security exercises, investigations, and authorized testing. |
+| [Foundations](./Foundations/) | Linux, networking, operating systems, and other core concepts. |
+| [VAPT](./VAPT/) | Vulnerability assessment and penetration-testing labs in authorised environments. |
+| [SOC](./SOC/) | Security monitoring, log analysis, incident investigation, and detection-oriented projects. |
 
-## Foundations
+## VAPT
 
-| # | Exercise | Topics | Status |
-|---|---|---|---|
-| 01 | [Linux Fundamentals](./Foundations/01-linux-fundamentals/) | User identity, filesystem navigation, groups, and system information | Documented with evidence |
-| 02 | [Linux System Resource Monitoring](./Foundations/02-linux-system-monitoring/) | CPU availability, memory, storage, uptime, and process inspection | Documented with evidence |
-| 03 | [Linux File Permissions](./Foundations/03-linux-file-permissions/) | File metadata, permission modes, `chmod`, and file removal | Documented with evidence |
-| 04 | [Linux Network Interface and Socket Inspection](./Foundations/04-linux-network-inspection/) | Interfaces, IP addressing, routing, TCP/UDP sockets, and listening services | Documented; no screenshot published for privacy |
-
-## Security Labs
+The VAPT section contains my completed PortSwigger Web Security Academy labs. These are guided exercises in a deliberately vulnerable training environment, not evidence of professional penetration-testing engagements.
 
 | # | Lab | Topic | Status |
 |---|---|---|---|
-| 01 | [Unprotected Admin Functionality](./Security-Labs/PortSwigger-Web-Security-Academy/01-unprotected-admin-functionality/) | Broken access control | Solved |
-| 02 | [User Role Controlled by Request Parameter](./Security-Labs/PortSwigger-Web-Security-Academy/02-user-role-controlled-by-request-parameter/) | Broken access control / privilege escalation | Solved |
-| 03 | [User ID Controlled by Request Parameter](./Security-Labs/PortSwigger-Web-Security-Academy/03-user-id-controlled-by-request-parameter/) | IDOR / horizontal privilege escalation | Solved |
-| 04 | [User Role Can Be Modified in User Profile](./Security-Labs/PortSwigger-Web-Security-Academy/04-user-role-can-be-modified-in-user-profile/) | Mass assignment / vertical privilege escalation | Solved |
-| 05 | [Password Reset Broken Logic](./Security-Labs/PortSwigger-Web-Security-Academy/05-password-reset-broken-logic/) | Password-reset logic flaw / account takeover | Solved |
-| 06 | [2FA Simple Bypass](./Security-Labs/PortSwigger-Web-Security-Academy/06-2fa-simple-bypass/) | Multi-factor authentication bypass | Solved |
-| 07 | [SQL Injection — WHERE Clause Allowing Retrieval of Hidden Data](./Security-Labs/PortSwigger-Web-Security-Academy/07-sql-injection-where-clause-hidden-data/) | SQL injection / hidden data retrieval | Solved |
+| 01 | [Unprotected Admin Functionality](./VAPT/PortSwigger-Web-Security-Academy/01-unprotected-admin-functionality/) | Broken access control | Solved |
+| 02 | [User Role Controlled by Request Parameter](./VAPT/PortSwigger-Web-Security-Academy/02-user-role-controlled-by-request-parameter/) | Broken access control / privilege escalation | Solved |
+| 03 | [User ID Controlled by Request Parameter](./VAPT/PortSwigger-Web-Security-Academy/03-user-id-controlled-by-request-parameter/) | IDOR / horizontal privilege escalation | Solved |
+| 04 | [User Role Can Be Modified in User Profile](./VAPT/PortSwigger-Web-Security-Academy/04-user-role-can-be-modified-in-user-profile/) | Mass assignment / vertical privilege escalation | Solved |
+| 05 | [Password Reset Broken Logic](./VAPT/PortSwigger-Web-Security-Academy/05-password-reset-broken-logic/) | Password-reset logic flaw / account takeover | Solved |
+| 06 | [2FA Simple Bypass](./VAPT/PortSwigger-Web-Security-Academy/06-2fa-simple-bypass/) | Multi-factor authentication bypass | Solved |
+| 07 | [SQL Injection — WHERE Clause Allowing Retrieval of Hidden Data](./VAPT/PortSwigger-Web-Security-Academy/07-sql-injection-where-clause-hidden-data/) | SQL injection / hidden data retrieval | Solved |
 
-## Documentation Format
+## SOC
 
-Each entry records its objective, authorized scope, methodology, observations, findings, and key takeaways. Screenshots are included when sharing them is appropriate; sensitive outputs may be documented without publishing raw captures.
+The SOC section will contain practical defensive-security projects. The first project is an SSH authentication-log investigation using a self-created synthetic dataset.
 
-## Scope and Responsible Practice
+- [SOC01 — SSH Authentication Log Investigation](./SOC/SOC01-authentication-log-investigation/)
 
-All security testing documented here is performed only in authorized labs or controlled environments. Credentials, private data, and restricted challenge solutions are not intentionally published.
+## Foundations
 
-## Progress
+Foundational exercises remain in the [Foundations](./Foundations/) directory.
 
-This repository distinguishes foundational exercises from hands-on security testing. Guided lab completion is not presented as proof of independent mastery.
+## Documentation and Responsible Practice
+
+Each project should explain its objective, environment, data sources, methodology, observations, findings, limitations, and lessons learned. Evidence is included only when it is useful and safe to publish.
+
+All testing is limited to authorised labs or controlled environments. Synthetic datasets are explicitly labelled and are never represented as real incidents. Sensitive credentials, tokens, and private information should not be committed.
