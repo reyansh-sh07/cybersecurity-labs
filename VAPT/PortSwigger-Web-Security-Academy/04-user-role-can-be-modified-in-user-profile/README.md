@@ -120,7 +120,7 @@ The main lesson is that **the server must decide which account properties a user
 
 ### Administrator panel and lab completion
 
-![PortSwigger lab completion confirmation](./evidence/Screenshot%20%281656%29.png)
+![PortSwigger lab completion confirmation](./evidence/Lab_Completion.png)
 
 The screenshot shows the successful lab completion and administrator panel.
 

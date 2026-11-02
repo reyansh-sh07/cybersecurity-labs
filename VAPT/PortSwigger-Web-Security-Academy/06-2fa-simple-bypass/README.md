@@ -58,13 +58,9 @@ The server must maintain a distinct, incomplete-authentication state after passw
 
 ## Evidence
 
-The lab-completion screenshot belongs in the `evidence/` directory.
-
-The uploaded completion screenshot is stored as `01-lab-solved.png`.
-
 ![PortSwigger 2FA simple bypass lab completion](./evidence/01-lab-solved.png)
 
-For a public portfolio, consider replacing the screenshot with a copy that has the unique lab-instance URL redacted. Never publish session cookies, authentication tokens, or other secrets.
+The screenshot records successful completion of the 2FA bypass lab.
 
 ## Scope
 

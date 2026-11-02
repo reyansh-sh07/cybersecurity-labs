@@ -102,19 +102,11 @@ If I were securing an application like this, I would:
 - Verify the user's permissions on the server for every admin-only page and action.
 - Test the application by changing client-side values and confirming that unauthorized users still cannot access privileged functionality.
 
-## My takeaway
+## Evidence
 
-At first, I was looking at the Network tab and trying to change the value from there. I didn't immediately realise that the browser's Storage tab was where I could edit the cookie itself.
+![PortSwigger lab completion confirmation](./evidence/05-lab-solved.png)
 
-Once I found the `Admin` cookie, the idea became much clearer. I changed its value, refreshed the page, and saw that the application was treating my normal account as an administrator.
-
-The biggest thing I learned here is that **a value coming from the browser cannot be trusted just because the application created it**. The server must independently verify what the user is allowed to do.
-
-## Lab Evidence
-
-- `05-lab-solved.png` — successful lab completion and confirmation that the requested user was deleted.
-
-I have not included the original cookie Storage screenshot because it exposed a session-cookie value and a unique lab-instance identifier. I will add a redacted version only after those values are fully hidden. The remaining steps are documented above without exposing session data.
+The screenshot records successful lab completion and confirmation that the requested user was deleted.
 
 ## Scope
 

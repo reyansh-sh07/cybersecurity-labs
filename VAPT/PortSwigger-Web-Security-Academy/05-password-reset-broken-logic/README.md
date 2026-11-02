@@ -49,11 +49,9 @@ This flaw can result in **account takeover**. An attacker may be able to set a n
 
 ## Evidence
 
-Upload the redacted lab-completion screenshot to the `evidence/` directory using the filename `01-lab-solved-redacted.png`.
-
 ![PortSwigger password reset lab completion](./evidence/01-lab-solved-redacted.png)
 
-Before publishing, confirm that the screenshot does not expose session cookies, reset tokens, credentials, or the unique lab-instance URL.
+The screenshot records successful completion of the password-reset lab.
 
 ## Scope
 This exercise was performed only in the intentionally vulnerable PortSwigger Web Security Academy lab environment. The password reset and account access were limited to the lab instance.

@@ -95,14 +95,6 @@ This is an example of:
 - Test with multiple accounts to verify that one user cannot read or modify another user's resources.
 - Treat unpredictable identifiers as defense-in-depth only; they do not replace authorization checks.
 
-## My takeaway
-
-The lab description gave me the vulnerability category, so I focused on understanding how the account page selected a user. After logging in as `wiener`, I noticed the `id=wiener` parameter in the URL. That was the key clue.
-
-Changing the ID to `carlos` exposed his account information and allowed me to retrieve the API key required to solve the lab.
-
-The main lesson is that **the server must check whether the authenticated user is allowed to access the specific account or object requested**. Simply changing an ID in the URL should never grant access to another user's data.
-
 ## Lab Evidence
 
 The final screenshot in the `evidence/` directory shows the successful lab completion. The API key has been redacted before publication.

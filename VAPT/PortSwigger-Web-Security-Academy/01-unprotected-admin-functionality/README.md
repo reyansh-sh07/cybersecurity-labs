@@ -117,14 +117,6 @@ If I were securing an application like this, I would:
 - Make sure normal users cannot perform administrative actions just by entering a URL directly.
 - Test admin routes using both logged-out and normal user accounts.
 
-## My takeaway
-
-This lab taught me that sometimes the useful clue is not hidden in complicated code or a complex payload. It can be sitting in a simple file like robots.txt.
-
-I started by exploring pages, checking URL changes, and trying a few things that did not work. Eventually, one small clue helped me find the admin panel.
-
-The bigger lesson for me was understanding the difference between **finding a hidden URL** and **finding an actual security vulnerability**. The URL helped me discover the panel, but the missing access-control check was what made the lab vulnerable.
-
 ## Lab Evidence
 
 All screenshots are stored in the `evidence/` folder and embedded above at the relevant steps.

@@ -34,9 +34,7 @@ These are point-in-time observations; resource usage and process IDs can change 
 
 ## Practical Evidence
 
-The terminal screenshot for this exercise will be embedded here once uploaded.
-
-<!-- Add the screenshot using: ![Linux resource monitoring evidence](./evidence/linux-resource-monitoring.png) -->
+![Linux resource monitoring terminal evidence](./evidence/linux-resource-monitoring.png)
 
 ## Key Takeaways
 

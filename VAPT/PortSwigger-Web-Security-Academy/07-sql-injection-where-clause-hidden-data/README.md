@@ -83,11 +83,9 @@ The demonstrated impact in this lab was retrieval of hidden product data.
 
 ## Evidence
 
-The lab-completion screenshot is stored in the `evidence/` directory.
-
 ![SQL injection WHERE clause lab completion](./evidence/01-lab-solved.png)
 
-**Privacy note:** The screenshot's browser address bar contains the unique lab-instance URL. Redact it before keeping this evidence publicly accessible. Do not publish credentials, session cookies, or other sensitive values.
+The screenshot records successful completion of the SQL injection lab.
 
 ## Scope
 
