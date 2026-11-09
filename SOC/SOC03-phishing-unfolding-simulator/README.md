@@ -38,7 +38,9 @@ I do not yet have enough practical experience to confidently assess all remainin
 
 ## Evidence
 
-The `evidence/` directory is reserved for the scenario screenshot. Add the supplied screenshot there as `01-scenario-in-progress.png`. It should be treated only as evidence that the scenario was started and remains in progress, not as evidence of completion or of any particular alert disposition.
+The screenshot below records the scenario in progress. It demonstrates that the simulation was started; it is **not** evidence of completion or of any particular alert disposition.
+
+![TryHackMe SOC Simulator — Phishing Unfolding in progress](./evidence/01-scenario-in-progress.png)
 
 ## Scope and assistance disclosure
 
