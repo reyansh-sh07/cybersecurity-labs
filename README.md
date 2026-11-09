@@ -26,9 +26,11 @@ The VAPT section contains my completed PortSwigger Web Security Academy labs. Th
 
 ## SOC
 
-The SOC section will contain practical defensive-security projects. The first project is an SSH authentication-log investigation using a self-created synthetic dataset.
+The SOC section contains defensive-security investigations and scenario-based exercises. Projects clearly distinguish completed work from ongoing practice.
 
 - [SOC01 — SSH Authentication Log Investigation](./SOC/SOC01-authentication-log-investigation/)
+- [SOC02 — Compromised Windows Analysis](./SOC/SOC02-compromised-windows-analysis/)
+- [SOC03 — Phishing Unfolding (in progress)](./SOC/SOC03-phishing-unfolding-simulator/)
 
 ## Foundations
 
