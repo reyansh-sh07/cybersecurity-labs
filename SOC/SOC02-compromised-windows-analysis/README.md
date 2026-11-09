@@ -52,9 +52,9 @@ The room's investigation scenario covers suspicious remote access, security-cont
 
 ## Evidence
 
-The room-completion screenshot belongs in this directory:
+The screenshot below confirms completion of the TryHackMe room.
 
-`evidence/01-room-completed.png`
+![TryHackMe Compromised Windows Analysis room completion](./evidence/01-room-completed.png)
 
 ## Scope and assistance disclosure
 
