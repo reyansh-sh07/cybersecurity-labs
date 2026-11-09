@@ -38,7 +38,7 @@ I do not yet have enough practical experience to confidently assess all remainin
 
 ## Evidence
 
-The scenario screenshot is stored in `evidence/01-scenario-in-progress.png`. It records the scenario card with a **Resume** option, demonstrating that the scenario was started and remains in progress. It is not evidence of completion or of any particular alert disposition.
+The `evidence/` directory is reserved for the scenario screenshot. Add the supplied screenshot there as `01-scenario-in-progress.png`. It should be treated only as evidence that the scenario was started and remains in progress, not as evidence of completion or of any particular alert disposition.
 
 ## Scope and assistance disclosure
 
