@@ -47,7 +47,9 @@ This is an illustrative query, not the application's confirmed source code.
 
 ## Evidence
 
-Lab-completion evidence only. Burp request screenshots are intentionally omitted from this repository.
+![Lab completion](./evidence/01-lab-solved.png)
+
+Burp request screenshots are intentionally omitted from this repository.
 
 ## Scope
 
