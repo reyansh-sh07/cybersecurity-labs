@@ -13,6 +13,7 @@ PortSwigger Web Security Academy labs focused on SQL injection vulnerabilities.
 | [05 — Database Version Disclosure (Oracle)](./05-sql-injection-database-version-oracle/) | UNION-based SQL injection / database fingerprinting | Solved |
 | [06 — Database Version Disclosure (MySQL / Microsoft)](./06-sql-injection-database-version-mysql-microsoft/) | UNION-based SQL injection / database fingerprinting | Solved |
 | [07 — UNION Attack: Retrieving Data from Other Tables](./07-sql-injection-union-retrieving-data-from-other-tables/) | UNION-based SQL injection / data extraction from another table | Solved |
+| [08 — UNION Attack: Retrieving Multiple Values in a Single Column](./08-sql-injection-union-retrieving-multiple-values-single-column/) | UNION-based SQL injection / concatenating multiple values into one column | Solved |
 
 ## Focus Areas
 
