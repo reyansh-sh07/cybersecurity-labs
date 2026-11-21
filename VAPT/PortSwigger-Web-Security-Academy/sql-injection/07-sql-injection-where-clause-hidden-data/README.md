@@ -1,92 +1,81 @@
 # SQL Injection — WHERE Clause Allowing Retrieval of Hidden Data
 
 **Platform:** PortSwigger Web Security Academy  
-**Topic:** SQL Injection — Retrieving Hidden Data  
-**Status:** Solved
+**Category:** SQL Injection  
+**Status:** Solved  
+**Difficulty:** Apprentice
 
 ## Objective
 
-Exploit a SQL injection vulnerability in the product-category filtering function to retrieve data that the application does not normally display.
+The goal was to test the product-category filter for SQL injection and retrieve products that were hidden by the normal filtering logic.
 
-## Methodology
+## My Approach
 
-### 1. Explore the application
+### 1. Find the input that controls the filter
 
-I started the lab and opened several pages to understand how the shop application worked. I noticed that the page included a category filter that changed which products were displayed.
+I browsed the shop and used the category filter. I then looked at the request in Burp Suite to identify where the selected category was being sent. The category value was the part I wanted to test.
 
-### 2. Identify the relevant request
+### 2. Check how the input was handled
 
-I opened Burp Suite and examined the HTTP traffic generated while using the category filter. I identified the request responsible for retrieving products for the selected category.
+I first appended a single quote (`'`) to the category value (`Pets`) to see whether the input was being interpreted in a way that could affect the SQL query.
 
-This was the request worth investigating because the category value was supplied by the client and appeared to influence the application's database query.
+### 3. Test the condition
 
-### 3. Test the category parameter
+I then modified the category value with a boolean condition:
 
-I was not yet comfortable constructing SQL injection payloads independently, so I used GPT as a learning aid to understand what kind of SQL input could test the suspected vulnerability.
+```
+Pets' OR 1=1--
+```
 
-I modified the category-related request in Burp Suite and supplied the suggested SQL injection input through the category parameter.
+The idea was to make the condition evaluate as true for every row. Since `1=1` is always true, the injected condition could bypass the original category restriction. The `--` comment marker was used to comment out the remaining part of the SQL statement.
 
-The application returned products that were not normally visible through the standard category filter, demonstrating that the input affected the SQL query's logic.
+### 4. Observe the result
 
-### 4. Verify completion
+The application returned products beyond the normal category filter, including products that were not meant to be shown through that filter. This confirmed that the input was affecting the SQL query's logic.
 
-The application displayed the lab completion message:
+### 5. Confirm completion
 
-**Congratulations, you solved the lab!**
+The lab displayed the successful completion message, confirming that the exercise was solved.
 
-## Finding
+## Why the Payload Worked
 
-The category filter was vulnerable to SQL injection in a SQL `WHERE` clause. The injected input altered the condition used by the database to select products, allowing retrieval of hidden data.
-
-## Why this happens
-
-Applications commonly build database queries using user-supplied filter values. If an application concatenates that input directly into SQL instead of treating it strictly as data, an attacker may be able to alter the query's logic.
-
-For example, a vulnerable query might conceptually look like:
+The category filter was likely used inside a SQL `WHERE` clause. A vulnerable query could look conceptually like this:
 
 ```sql
 SELECT * FROM products
-WHERE category = '<user_input>'
+WHERE category = 'Pets' AND released = 1
 ```
 
-If the application does not safely handle the input, SQL syntax supplied through the category filter can change the meaning of the `WHERE` condition.
+By injecting SQL syntax into the category value, the condition could be changed so that it became true for all rows. In this test, `OR 1=1` is always true, and the comment marker prevents the rest of the original query from interfering.
 
-This is a conceptual illustration, not a copy of the exact payload used in the lab.
+This is a simplified example to explain the logic, not a copy of the application's actual query.
 
-## Security impact
+## What I Learned
 
-Depending on the query and database permissions, SQL injection can allow an attacker to:
+- A single quote can be a useful initial probe when testing whether input is being placed into a SQL query unsafely.
+- The category filter is an HTTP request parameter, so I could test it by modifying the request in Burp rather than only interacting with the page.
+- Boolean conditions such as `1=1` can change the logic of a SQL `WHERE` clause when input is injectable.
+- SQL injection is not limited to database errors; it can also produce valid responses with altered results.
+- I understand the basic reasoning behind this payload, but I want more practice deriving SQL injection tests independently rather than relying on hints.
 
-- Retrieve records that should not be visible.
-- Bypass application-level filtering.
-- Expose sensitive information stored in the database.
-- Potentially modify or delete data if the database account has excessive privileges.
+## How I Would Prevent It
 
-The demonstrated impact in this lab was retrieval of hidden product data.
-
-## How to prevent this vulnerability
-
-- Use parameterized queries or prepared statements for all user-controlled values.
-- Avoid constructing SQL by concatenating raw input.
-- Apply allowlist validation to category identifiers where appropriate.
-- Run the application with a database account that has only the permissions it needs.
-- Handle database errors safely and avoid exposing query details to users.
-- Add security tests for filtering, sorting, search, and other database-backed parameters.
-
-## What I learned
-
-1. Interacting with application features helps identify which HTTP requests control backend data retrieval.
-2. Burp Suite can be used to isolate and modify the request generated by a category filter.
-3. User-controlled filter values must be treated as untrusted input.
-4. SQL injection can change the logic of a database query, not merely cause an error.
-5. I used GPT as a learning aid for constructing the test input; I should continue practising SQL fundamentals so I can derive and explain payloads independently.
+- Use parameterized queries / prepared statements so user input is treated as data, not SQL syntax.
+- Avoid building SQL statements by concatenating user-controlled values.
+- Validate category values against an allowlist of known categories.
+- Use a database account with only the permissions the application needs.
+- Add tests for database-backed filters and other input-controlled query features.
 
 ## Evidence
 
-![SQL injection WHERE clause lab completion](./evidence/01-lab-solved.png)
+### Lab completion
 
-The screenshot records successful completion of the SQL injection lab.
+![PortSwigger lab completion proof](./evidence/01-lab-solved.png)
+
+### Burp request
+
+A request screenshot will be added here after the session cookie and unique lab-instance hostname are redacted. **Do not upload the current unredacted screenshot.**
 
 ## Scope
 
-This exercise was performed only in the intentionally vulnerable PortSwigger Web Security Academy lab environment.
+This exercise was performed in PortSwigger Web Security Academy's intentionally vulnerable training environment.
