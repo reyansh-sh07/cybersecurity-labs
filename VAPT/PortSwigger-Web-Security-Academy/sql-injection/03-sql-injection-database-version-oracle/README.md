@@ -2,39 +2,39 @@
 
 ## Objective
 
-The objective of this lab was to use SQL injection to identify the database type and retrieve its version information. This helped me practise using a UNION-based query to extract data from a database in a controlled PortSwigger environment.
+Identify the database platform and retrieve its version information through a UNION-based SQL injection in the product-category filter.
 
 ## My Approach
 
-I started by testing the category filter in Burp Suite Repeater. I added a single quote (`'`) to the category value to see whether the application would return an error. It did, which suggested that the input was being included in the SQL query in a way that could affect its syntax.
+I started by inspecting the category-filter request in Burp Suite Repeater. To check how the input was handled, I appended a single quote (`'`) to the category value and observed an error response. I also tried a doubled single quote (`''`) as a comparison. The response behavior from these probes suggested that the category value was affecting the SQL query's syntax, so I continued testing the filter.
 
-Next, I used UNION-based testing to understand the query's column structure and determine which column could display text. Once I had a compatible column, I used Oracle's `v$version` view to retrieve database version information.
+I then used UNION-based tests to determine the query's column count and which columns could display text. Once the output structure was understood, I looked up the Oracle-specific syntax in a SQL injection cheat sheet and used Oracle's `v$version` view to retrieve version details.
 
-The query returned the database details in the response, and the lab was marked as solved.
+The version information appeared in the page response, and the lab completion banner confirmed that the lab was solved.
 
-## Why This Worked
+## Why It Worked
 
-The category value was being handled unsafely as part of the SQL statement. By introducing SQL syntax into that input, I was able to alter the original query and append a second SELECT statement with UNION.
+The category value was being included unsafely in the SQL statement. UNION allows a query to append results from another SELECT statement, provided the number of columns and their data types are compatible with the original query.
 
-Oracle provides the `v$version` view for version information. The UNION query allowed the application's response to display data from that view, rather than only the normal product-category results.
+Oracle exposes database version information through the `v$version` view. Because the injected query could return data in a column rendered by the page, the database details became visible in the response.
 
 ## What I Learned
 
-- A single quote can be a useful first test for SQL injection when the input is placed inside a quoted SQL string.
-- UNION-based injection depends on matching the original query's column count and compatible data types.
-- Databases have their own system views and syntax, so identifying the database type matters during testing.
-- Error responses and normal page output can both provide clues about how a query is structured.
+- Quote probes are useful starting points, but their results need to be interpreted in context.
+- UNION-based SQL injection requires the appended query to match the original query's column count and compatible types.
+- SQL syntax and system views vary by database, so identifying the database platform matters.
+- The application's response can reveal information even when the page looks like a normal product listing.
 
 ## How I Would Prevent It
 
-- Use parameterized queries / prepared statements so input is treated as data, not SQL syntax.
-- Avoid constructing SQL statements through string concatenation.
-- Restrict database permissions so application accounts can access only what they need.
-- Handle database errors safely and avoid returning detailed SQL errors to users.
+- Use parameterized queries / prepared statements.
+- Avoid building SQL statements through string concatenation.
+- Restrict the application's database permissions to only what it needs.
+- Handle database errors safely and avoid returning detailed SQL error messages.
 
 ## Evidence
 
-### UNION query and database version response
+### UNION query and version response
 
 ![Burp Repeater showing the UNION query and Oracle version response](./evidence/01-burp-union-oracle-version.png)
 
