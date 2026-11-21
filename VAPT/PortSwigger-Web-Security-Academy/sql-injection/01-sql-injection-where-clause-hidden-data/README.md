@@ -68,13 +68,15 @@ This is a simplified example to explain the logic, not a copy of the application
 
 ## Evidence
 
+### Burp Repeater — injection test
+
+![Burp request showing the category parameter test](./evidence/01-burp-request-redacted.png)
+
 ### Lab completion
 
-![PortSwigger lab completion proof](./evidence/01-lab-solved.png)
+![PortSwigger lab completion proof](./evidence/02-lab-solved.png)
 
-### Burp request
-
-A request screenshot will be added here after the session cookie and unique lab-instance hostname are redacted. **Do not upload the current unredacted screenshot.**
+> The request evidence should be sanitized before publishing: redact the session cookie and unique lab hostname.
 
 ## Scope
 

@@ -6,7 +6,7 @@ PortSwigger Web Security Academy labs focused on SQL injection flaws.
 
 | Lab | Vulnerability focus | Status |
 |---|---|---|
-| [WHERE Clause Allowing Retrieval of Hidden Data](./00-sql-injection-where-clause-hidden-data/) | SQL injection / hidden data retrieval | Solved |
+| [WHERE Clause Allowing Retrieval of Hidden Data](./01-sql-injection-where-clause-hidden-data/) | SQL injection / hidden data retrieval | Solved |
 
 ## Focus areas
 

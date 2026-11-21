@@ -6,8 +6,8 @@ PortSwigger Web Security Academy exercises focused on authentication weaknesses 
 
 | Lab | Vulnerability focus | Status |
 |---|---|---|
-| [Password Reset Broken Logic](./00-password-reset-broken-logic/) | Password-reset workflow / account takeover | Solved |
-| [2FA Simple Bypass](./01-2fa-simple-bypass/) | Multi-factor authentication bypass | Solved |
+| [Password Reset Broken Logic](./01-password-reset-broken-logic/) | Password-reset workflow / account takeover | Solved |
+| [2FA Simple Bypass](./02-2fa-simple-bypass/) | Multi-factor authentication bypass | Solved |
 
 ## Focus areas
 
