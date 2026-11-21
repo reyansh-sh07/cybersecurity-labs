@@ -7,77 +7,65 @@
 
 ## Objective
 
-The goal was to test the product-category filter for SQL injection and retrieve products that were hidden by the normal filtering logic.
+Test whether the shop's product-category filter was vulnerable to SQL injection, then use the weakness to reveal products that were hidden by the normal filter.
 
 ## My Approach
 
-### 1. Find the input that controls the filter
+I started by looking at how the product category filter worked and checked the request in Burp Suite. This helped me identify the `category` parameter as the input that controlled which products were displayed.
 
-I browsed the shop and used the category filter. I then looked at the request in Burp Suite to identify where the selected category was being sent. The category value was the part I wanted to test.
+To see how the application handled that input, I first added a single quote (`'`) to the category value. This was a simple first probe: if the value was being inserted into a SQL query without proper handling, the quote could interfere with the query's syntax.
 
-### 2. Check how the input was handled
-
-I first appended a single quote (`'`) to the category value (`Pets`) to see whether the input was being interpreted in a way that could affect the SQL query.
-
-### 3. Test the condition
-
-I then modified the category value with a boolean condition:
+After that, I tested a boolean-based condition:
 
 ```
 Pets' OR 1=1--
 ```
 
-The idea was to make the condition evaluate as true for every row. Since `1=1` is always true, the injected condition could bypass the original category restriction. The `--` comment marker was used to comment out the remaining part of the SQL statement.
+The logic behind this was straightforward. `1=1` is always true, so adding it with `OR` can make the filter match rows regardless of the original category condition. The `--` marker comments out the rest of the SQL statement in the context of this lab, helping prevent the remaining query from interfering with the test.
 
-### 4. Observe the result
+The response showed products outside the normal category results, including hidden items. That indicated the input was changing the database query's logic rather than being handled strictly as a category value. The lab's completion message then confirmed the exercise was solved.
 
-The application returned products beyond the normal category filter, including products that were not meant to be shown through that filter. This confirmed that the input was affecting the SQL query's logic.
+## Why It Worked
 
-### 5. Confirm completion
-
-The lab displayed the successful completion message, confirming that the exercise was solved.
-
-## Why the Payload Worked
-
-The category filter was likely used inside a SQL `WHERE` clause. A vulnerable query could look conceptually like this:
+The vulnerable filter likely used the category value directly in a SQL `WHERE` clause. A simplified example might look like this:
 
 ```sql
 SELECT * FROM products
 WHERE category = 'Pets' AND released = 1
 ```
 
-By injecting SQL syntax into the category value, the condition could be changed so that it became true for all rows. In this test, `OR 1=1` is always true, and the comment marker prevents the rest of the original query from interfering.
+If user input is concatenated into a query, SQL syntax can escape the intended value and alter the condition. In this test, the always-true condition changes how the database evaluates the filter, allowing the application to return additional rows.
 
-This is a simplified example to explain the logic, not a copy of the application's actual query.
+This is an illustrative query—not the application's confirmed source code.
 
-## What I Learned
+## What I Took Away
 
-- A single quote can be a useful initial probe when testing whether input is being placed into a SQL query unsafely.
-- The category filter is an HTTP request parameter, so I could test it by modifying the request in Burp rather than only interacting with the page.
-- Boolean conditions such as `1=1` can change the logic of a SQL `WHERE` clause when input is injectable.
-- SQL injection is not limited to database errors; it can also produce valid responses with altered results.
-- I understand the basic reasoning behind this payload, but I want more practice deriving SQL injection tests independently rather than relying on hints.
+- A quote can be a useful initial probe for checking how input interacts with a database query.
+- Request parameters can be inspected and tested directly with Burp, rather than relying only on the browser interface.
+- Boolean logic is central to understanding many SQL injection techniques: changing the condition can change which records are returned.
+- SQL injection may produce a normal-looking response instead of an obvious database error.
+- I want to keep practising how to form and interpret tests independently, instead of depending on hints.
 
 ## How I Would Prevent It
 
-- Use parameterized queries / prepared statements so user input is treated as data, not SQL syntax.
+- Use parameterized queries or prepared statements so input is treated as data, not executable SQL.
 - Avoid building SQL statements by concatenating user-controlled values.
-- Validate category values against an allowlist of known categories.
-- Use a database account with only the permissions the application needs.
-- Add tests for database-backed filters and other input-controlled query features.
+- Validate category values against an allowlist of valid categories.
+- Use a database account with only the permissions the application requires.
+- Add tests for database-backed filters and other user-controlled query features.
 
 ## Evidence
 
-### Burp Repeater — injection test
+Evidence images will be added manually to the `evidence/` folder. The placeholders below show where each screenshot belongs.
 
-**Burp request evidence:** will be added after the redacted screenshot is uploaded.
+### Request and injection test
+
+<!-- Add a sanitized Burp Repeater screenshot here. Redact session cookies and the unique lab hostname. -->
 
 ### Lab completion
 
-![PortSwigger lab completion proof](./evidence/02-lab-solved.png)
-
-> The request evidence should be sanitized before publishing: redact the session cookie and unique lab hostname.
+<!-- Add the PortSwigger completion screenshot here. -->
 
 ## Scope
 
-This exercise was performed in PortSwigger Web Security Academy's intentionally vulnerable training environment.
+This exercise was completed in PortSwigger Web Security Academy's intentionally vulnerable training environment.
