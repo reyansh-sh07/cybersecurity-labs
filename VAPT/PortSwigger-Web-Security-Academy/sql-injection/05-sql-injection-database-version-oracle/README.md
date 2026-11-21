@@ -34,5 +34,7 @@ Oracle exposes database version information through the `v$version` view. Becaus
 
 ## Evidence
 
-The lab-completion screenshot is retained. Burp request screenshots are intentionally omitted from this repository.
+![Lab completion](./evidence/01-lab-solved.png)
+
+Burp request screenshots are intentionally omitted from this repository.
 

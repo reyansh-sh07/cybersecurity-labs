@@ -38,4 +38,6 @@ The version expression was specific to the database syntax used in this lab. Ret
 
 ## Evidence
 
-The lab-completion screenshot is retained. Burp request screenshots are intentionally omitted from this repository.
+![Lab completion](./evidence/01-lab-solved.png)
+
+Burp request screenshots are intentionally omitted from this repository.
