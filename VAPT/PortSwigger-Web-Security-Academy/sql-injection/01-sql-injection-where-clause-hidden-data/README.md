@@ -70,7 +70,7 @@ This is a simplified example to explain the logic, not a copy of the application
 
 ### Burp Repeater — injection test
 
-![Burp request showing the category parameter test](./evidence/01-burp-request-redacted.png)
+**Burp request evidence:** will be added after the redacted screenshot is uploaded.
 
 ### Lab completion
 
