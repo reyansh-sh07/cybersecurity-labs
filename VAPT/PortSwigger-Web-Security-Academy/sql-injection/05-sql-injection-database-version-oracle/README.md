@@ -34,10 +34,5 @@ Oracle exposes database version information through the `v$version` view. Becaus
 
 ## Evidence
 
-### UNION query and version response
+The lab-completion screenshot is retained. Burp request screenshots are intentionally omitted from this repository.
 
-![Burp Repeater showing the UNION query and Oracle version response](./evidence/01-burp-union-oracle-version.png)
-
-### Lab completion
-
-![PortSwigger lab marked as solved](./evidence/02-lab-solved.png)

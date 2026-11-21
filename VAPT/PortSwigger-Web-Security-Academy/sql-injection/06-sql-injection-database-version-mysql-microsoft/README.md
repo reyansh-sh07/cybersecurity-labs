@@ -38,10 +38,4 @@ The version expression was specific to the database syntax used in this lab. Ret
 
 ## Evidence
 
-### UNION query and database version response
-
-<!-- Add sanitized Burp Repeater screenshot here. Redact session cookies and the unique lab hostname. -->
-
-### Lab completion
-
-<!-- Add PortSwigger completion screenshot here. -->
+The lab-completion screenshot is retained. Burp request screenshots are intentionally omitted from this repository.

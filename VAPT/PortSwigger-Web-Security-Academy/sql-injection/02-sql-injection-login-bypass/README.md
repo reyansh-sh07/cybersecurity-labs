@@ -32,12 +32,4 @@ The input was therefore influencing the authentication logic instead of being tr
 
 ## Evidence
 
-I'll add the screenshots manually to the `evidence/` folder and link them here.
-
-### Login request and bypass test
-
-<!-- Add sanitized Burp screenshot here. -->
-
-### Successful login
-
-<!-- Add PortSwigger completion screenshot here. -->
+Lab-completion evidence only. Burp request screenshots are intentionally omitted from this repository.

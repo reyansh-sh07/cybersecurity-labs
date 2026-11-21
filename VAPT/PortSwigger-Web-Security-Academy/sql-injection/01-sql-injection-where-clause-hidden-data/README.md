@@ -47,15 +47,7 @@ This is an illustrative query, not the application's confirmed source code.
 
 ## Evidence
 
-I'll add the screenshots manually to the `evidence/` folder and place them below.
-
-### Request and injection test
-
-<!-- Add sanitized Burp screenshot here. Redact cookies and the unique lab hostname. -->
-
-### Lab completion
-
-<!-- Add PortSwigger completion screenshot here. -->
+Lab-completion evidence only. Burp request screenshots are intentionally omitted from this repository.
 
 ## Scope
 

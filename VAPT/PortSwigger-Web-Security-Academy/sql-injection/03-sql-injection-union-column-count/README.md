@@ -35,10 +35,4 @@ The vulnerable category parameter was inserted into the SQL query without safe p
 
 ## Evidence
 
-### UNION test identifying the column count
-
-![Burp Repeater test for the UNION column count](./evidence/01-burp-union-column-count.png)
-
-### Lab completion
-
-![PortSwigger lab marked as solved](./evidence/02-lab-solved.png)
+Burp request screenshots are intentionally omitted. Completion evidence will be added here when the screenshot is available in the repository.
