@@ -7,64 +7,55 @@
 
 ## Objective
 
-Test whether the shop's product-category filter was vulnerable to SQL injection, then use the weakness to reveal products that were hidden by the normal filter.
+Check whether the product-category filter could be manipulated with SQL injection, then use the flaw to reveal products that the application normally hides.
 
 ## My Approach
 
-I started by looking at how the product category filter worked and checked the request in Burp Suite. This helped me identify the `category` parameter as the input that controlled which products were displayed.
+I began with the category filter and inspected its request in Burp Suite. The `category` parameter stood out because it controlled which products appeared on the page, making it a logical place to start testing.
 
-To see how the application handled that input, I first added a single quote (`'`) to the category value. This was a simple first probe: if the value was being inserted into a SQL query without proper handling, the quote could interfere with the query's syntax.
+I first appended a single quote (`'`) to the category value and observed how the application responded. I then tried a doubled single quote (`''`) as a comparison, to see how the input behaved when quote characters were present. These probes, along with the response behavior, suggested that the parameter was interacting with the underlying SQL query and was worth investigating further.
 
-After that, I tested a boolean-based condition:
-
-```
-Pets' OR 1=1--
-```
-
-The logic behind this was straightforward. `1=1` is always true, so adding it with `OR` can make the filter match rows regardless of the original category condition. The `--` marker comments out the rest of the SQL statement in the context of this lab, helping prevent the remaining query from interfering with the test.
-
-The response showed products outside the normal category results, including hidden items. That indicated the input was changing the database query's logic rather than being handled strictly as a category value. The lab's completion message then confirmed the exercise was solved.
+Next, I tested a boolean condition. The idea was to make the original category condition match more broadly by adding an always-true expression. When the response displayed products beyond the normal category results—including hidden products—it showed that the filter's query logic had been altered. The lab completion banner confirmed the result.
 
 ## Why It Worked
 
-The vulnerable filter likely used the category value directly in a SQL `WHERE` clause. A simplified example might look like this:
+The category filter was vulnerable because user input was able to affect the structure of the SQL query. A simplified version of the intended query might be:
 
 ```sql
 SELECT * FROM products
 WHERE category = 'Pets' AND released = 1
 ```
 
-If user input is concatenated into a query, SQL syntax can escape the intended value and alter the condition. In this test, the always-true condition changes how the database evaluates the filter, allowing the application to return additional rows.
+If the application builds this query by directly concatenating user input, a tester may be able to change how the `WHERE` condition is evaluated. In this lab, the altered condition returned additional rows instead of limiting results to the selected category and released products.
 
-This is an illustrative query—not the application's confirmed source code.
+This is an illustrative query, not the application's confirmed source code.
 
 ## What I Took Away
 
-- A quote can be a useful initial probe for checking how input interacts with a database query.
-- Request parameters can be inspected and tested directly with Burp, rather than relying only on the browser interface.
-- Boolean logic is central to understanding many SQL injection techniques: changing the condition can change which records are returned.
-- SQL injection may produce a normal-looking response instead of an obvious database error.
-- I want to keep practising how to form and interpret tests independently, instead of depending on hints.
+- Start by identifying which request parameter controls the page's behavior.
+- Quote-based probes can reveal useful changes in how input is handled, but they should be interpreted with the response—not treated as proof by themselves.
+- Boolean logic can change the result set when input is improperly included in a SQL query.
+- SQL injection can expose data that the application intended to hide.
 
 ## How I Would Prevent It
 
-- Use parameterized queries or prepared statements so input is treated as data, not executable SQL.
-- Avoid building SQL statements by concatenating user-controlled values.
+- Use parameterized queries or prepared statements so input is treated as data, not SQL.
+- Avoid constructing queries by concatenating user-controlled strings.
 - Validate category values against an allowlist of valid categories.
-- Use a database account with only the permissions the application requires.
-- Add tests for database-backed filters and other user-controlled query features.
+- Use a database account with only the permissions the application needs.
+- Test database-backed filters for injection vulnerabilities.
 
 ## Evidence
 
-Evidence images will be added manually to the `evidence/` folder. The placeholders below show where each screenshot belongs.
+I'll add the screenshots manually to the `evidence/` folder and place them below.
 
 ### Request and injection test
 
-<!-- Add a sanitized Burp Repeater screenshot here. Redact session cookies and the unique lab hostname. -->
+<!-- Add sanitized Burp screenshot here. Redact cookies and the unique lab hostname. -->
 
 ### Lab completion
 
-<!-- Add the PortSwigger completion screenshot here. -->
+<!-- Add PortSwigger completion screenshot here. -->
 
 ## Scope
 
