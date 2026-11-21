@@ -1,25 +1,27 @@
 # Vulnerability Assessment and Penetration Testing (VAPT)
 
-This section contains hands-on web security exercises and authorised testing practice. The current collection consists of guided PortSwigger Web Security Academy labs completed in deliberately vulnerable training environments.
+Hands-on web security exercises and authorised testing practice. The current collection primarily contains PortSwigger Web Security Academy labs completed in deliberately vulnerable training environments.
 
 These exercises demonstrate learning and lab completion; they are not presented as professional penetration-testing engagements.
 
-## PortSwigger Web Security Academy
+## PortSwigger Web Security Academy — Categories
 
-| # | Lab | Topic | Status |
-|---|---|---|---|
-| 01 | [Unprotected Admin Functionality](./PortSwigger-Web-Security-Academy/01-unprotected-admin-functionality/) | Broken access control | Solved |
-| 02 | [User Role Controlled by Request Parameter](./PortSwigger-Web-Security-Academy/02-user-role-controlled-by-request-parameter/) | Broken access control / privilege escalation | Solved |
-| 03 | [User ID Controlled by Request Parameter](./PortSwigger-Web-Security-Academy/03-user-id-controlled-by-request-parameter/) | IDOR / horizontal privilege escalation | Solved |
-| 04 | [User Role Can Be Modified in User Profile](./PortSwigger-Web-Security-Academy/04-user-role-can-be-modified-in-user-profile/) | Mass assignment / vertical privilege escalation | Solved |
-| 05 | [Password Reset Broken Logic](./PortSwigger-Web-Security-Academy/05-password-reset-broken-logic/) | Password-reset logic flaw / account takeover | Solved |
-| 06 | [2FA Simple Bypass](./PortSwigger-Web-Security-Academy/06-2fa-simple-bypass/) | Multi-factor authentication bypass | Solved |
-| 07 | [SQL Injection — WHERE Clause Allowing Retrieval of Hidden Data](./PortSwigger-Web-Security-Academy/07-sql-injection-where-clause-hidden-data/) | SQL injection / hidden data retrieval | Solved |
+| Category | Focus | Labs |
+|---|---|---:|
+| [Broken Access Control](./PortSwigger-Web-Security-Academy/broken-access-control/) | Access-control failures, IDOR, privilege escalation, mass assignment | 4 |
+| [SQL Injection](./PortSwigger-Web-Security-Academy/sql-injection/) | SQL query manipulation and data retrieval | 1 |
 
-## Reporting Standard
+## Authentication-related labs (not categorised yet)
+
+The following labs remain at the academy folder's root until an Authentication category is added:
+
+- [Password Reset Broken Logic](./PortSwigger-Web-Security-Academy/05-password-reset-broken-logic/) — password-reset logic flaw
+- [2FA Simple Bypass](./PortSwigger-Web-Security-Academy/06-2fa-simple-bypass/) — multi-factor authentication bypass
+
+## Reporting standard
 
 Each lab report should document its objective, authorised scope, methodology, observations, vulnerability analysis, impact, remediation, and key learning. Evidence is included only when it adds value and can be shared safely.
 
-## Responsible Practice
+## Responsible practice
 
-All exercises in this section are limited to intentionally vulnerable labs or other explicitly authorised environments. Do not publish credentials, session cookies, private data, or active lab-instance secrets.
+All testing is limited to intentionally vulnerable labs or other explicitly authorised environments. Do not publish credentials, session cookies, private data, or active lab-instance secrets.
