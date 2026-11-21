@@ -14,10 +14,9 @@ A practical record of my cybersecurity learning, hands-on exercises, and indepen
 
 The VAPT section contains hands-on PortSwigger Web Security Academy labs organised by vulnerability category. These are training exercises in deliberately vulnerable environments, not evidence of professional penetration-testing engagements.
 
+- [Authentication — 2 labs](./VAPT/PortSwigger-Web-Security-Academy/authentication/)
 - [Broken Access Control — 4 labs](./VAPT/PortSwigger-Web-Security-Academy/broken-access-control/)
 - [SQL Injection — 1 lab](./VAPT/PortSwigger-Web-Security-Academy/sql-injection/)
-
-Authentication-related labs are currently retained at the PortSwigger academy directory root and will be categorised separately later.
 
 ## SOC
 
