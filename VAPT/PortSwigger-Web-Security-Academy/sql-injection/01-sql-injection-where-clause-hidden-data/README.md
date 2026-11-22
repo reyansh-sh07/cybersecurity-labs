@@ -50,7 +50,3 @@ This is an illustrative query, not the application's confirmed source code.
 ![Lab completion](./evidence/01-lab-solved.png)
 
 Burp request screenshots are intentionally omitted from this repository.
-
-## Scope
-
-This exercise was completed in PortSwigger Web Security Academy's intentionally vulnerable training environment.
