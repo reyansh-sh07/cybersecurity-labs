@@ -15,6 +15,8 @@ PortSwigger Web Security Academy labs focused on SQL injection vulnerabilities.
 | [07 — UNION Attack: Retrieving Data from Other Tables](./07-sql-injection-union-retrieving-data-from-other-tables/) | UNION-based SQL injection / data extraction from another table | Solved |
 | [08 — UNION Attack: Retrieving Multiple Values in a Single Column](./08-sql-injection-union-retrieving-multiple-values-single-column/) | UNION-based SQL injection / concatenating multiple values into one column | Solved |
 | [09 — Blind SQL Injection with Conditional Responses](./09-blind-sql-injection-conditional-responses/) | Blind SQL injection / Boolean response oracle | Solved |
+| [10 — Blind SQL Injection with Visible Error-Based Responses](./10-blind-sql-injection-visible-error-based/) | Blind SQL injection / error-based data extraction | Solved |
+| [11 — Blind SQL Injection with Time Delays](./11-blind-sql-injection-time-delays/) | Blind SQL injection / time-based confirmation | Solved |
 
 ## Focus Areas
 
@@ -22,6 +24,7 @@ PortSwigger Web Security Academy labs focused on SQL injection vulnerabilities.
 - Use quote-based probes and compare responses to guide testing.
 - Practice UNION-based SQL injection in authorized labs.
 - Understand column counts, data types, and DBMS-specific syntax.
+- Explore blind SQL injection techniques using Boolean responses, errors, and timing signals.
 - Document methodology, impact, and remediation.
 
 All exercises are performed in authorized training labs.
